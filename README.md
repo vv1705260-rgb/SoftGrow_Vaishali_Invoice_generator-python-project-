@@ -1,4 +1,4 @@
-# SoftGrow_Vaishali_Invoice_generator-python-project-
+## SoftGrow_Vaishali_Invoice_generator-python-project-
 
 # SoftGrowTech - Invoice Generator Pro
 
@@ -42,12 +42,4 @@ This project demonstrates file handling, data validation, CSV operations, and re
 | `invoice_count.txt` | Tracks next invoice number |
 | `README.md` | Project documentation |
 
-## 📸 Screenshots
-Add screenshots of your terminal here showing:
-1. Creating an invoice with GST calculation
-2. Sample `INV-001.txt` output
-3. `invoice_history.csv` opened in Excel
-4. Invoice History menu output
-
-## 📊 Sample Output
-Made by #Vaishali with 💗
+#Made by #lVaishali with 💗
