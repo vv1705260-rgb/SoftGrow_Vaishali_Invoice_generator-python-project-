@@ -154,3 +154,61 @@ def main():
 
 if __name__ == "__main__":
     main()
+import datetime
+
+print("="*50)
+print(" SoftGrowTech INVOICE GENERATOR")
+print("="*50)
+customer = input("Customer Name: ")
+phone = input("Phone Number: ")
+
+items = []
+total = 0
+date = datetime.datetime.now().strftime("%d-%m-%Y %H:%M")
+
+while True:
+    name = input("\nEnter item name or 'done' to finish: ")
+    if name.lower() == 'done': break
+    qty = int(input("Quantity: "))
+    price = float(input("Price per item: ₹"))
+    amount = qty * price
+    items.append([name, qty, price, amount])
+    total += amount
+
+discount = float(input("\nEnter discount % or 0: "))
+discount_amt = total * (discount / 100)
+subtotal = total - discount_amt
+gst = subtotal * 0.18
+grand_total = subtotal + gst
+
+invoice_text = f"""
+
+           SoftGrowTech - TAX INVOICE
+
+Date: {date}
+Customer: {customer}
+Phone: {phone}
+
+Item Name Qty Rate Amount
+
+"""
+for item in items:
+    invoice_text += f"{item[0]:<15} {item[1]:<6} ₹{item[2]:<8} ₹{item[3]:<8}\n"
+
+invoice_text += f"""--------------------------------------------------
+Subtotal: ₹{total:.2f}
+Discount {discount}%: -₹{discount_amt:.2f}
+GST 18%: +₹{gst:.2f}
+
+GRAND TOTAL: ₹{grand_total:.2f}
+
+        Thank you! Visit again
+
+"""
+
+print(invoice_text)
+
+filename = f"Invoice_{customer}_{date[:10]}.txt"
+with open(filename, "w") as file:
+    file.write(invoice_text)
+print(f"✅ Invoice saved as {filename}")
