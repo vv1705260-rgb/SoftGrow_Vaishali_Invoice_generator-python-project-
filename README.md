@@ -42,4 +42,4 @@ This project demonstrates file handling, data validation, CSV operations, and re
 | `invoice_count.txt` | Tracks next invoice number |
 | `README.md` | Project documentation |
 
-#Made by #lVaishali with 💗
+#Made by Vaishali with 💗
